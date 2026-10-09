@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Code Monsoon · Storyverse Round 2</title>
+  <meta name="description" content="A comic-style story game that teaches Python to complete beginners. Fix the drains. Fix the system. Storyverse 2026.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Hind:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Kalam:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Local offline Skulpt runtime with automatic CDN fallback -->
+  <script src="vendor/skulpt.min.js"></script>
+  <script src="vendor/skulpt-stdlib.js"></script>
+  <script>
+    if (typeof Sk === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"><\\/script>');
+      document.write('<script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js"><\\/script>');
+    }
+  </script>
+</head>
+<body>
+  <canvas id="rain" aria-hidden="true"></canvas>
+
+  <header class="top">
+    <div class="top-in">
+      <button class="brand" id="home" aria-label="Code Monsoon home">CODE <span>MONSOON</span></button>
+      <div class="hud" aria-label="Progress">
+        <div class="meter">
+          <label><span><span class="lg">City </span>Health</span><span id="hv">0</span></label>
+          <div class="bar health"><i id="hb"></i></div>
+        </div>
+        <div class="meter">
+          <label><span><span class="lg">Community </span>Trust</span><span id="tv">0</span></label>
+          <div class="bar trust"><i id="tb"></i></div>
+        </div>
+        <div class="xp" id="xp">0<small>XP</small></div>
+        <div class="engine" id="engine"><i></i><span>Python Loading</span></div>
+        <div class="top-btns">
+          <button class="iconbtn" id="snd" aria-pressed="false">Sound Off</button>
+          <button class="iconbtn" id="telem">Ward Telemetry</button>
+          <button class="iconbtn" id="pitch">Pitch &amp; SDG</button>
+          <button class="iconbtn" id="about">About &amp; Tools</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="app"></main>
+
+  <script src="story_data.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

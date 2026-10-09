@@ -1,0 +1,179 @@
+--- PAGE 1 ---
+Code Monsoon — Story Bible
+Oct 8, 2026  ·  @Ajinkya
+Storyverse submission: interactive story game that teaches Python to complete
+beginners.
+Project overview & metadata
+Genre: Comic-style narrative puzzle game / learn-to-code adventure
+Language taught: Python (beginner, no prior coding)
+Playtime: about 40 minutes (5 chapters + boss + epilogue)
+UN SDGs addressed: Goal 4 (Quality Education), Goal 6 (Clean Water & Sanitation),
+Goal 11 (Sustainable Cities), Goal 12 (Responsible Consumption), Goal 13 (Climate
+Action), Goal 16 (Justice & Strong Institutions)
+Core conflict: Shantipur's monsoon drains are choked with unsorted household waste,
+and the private contractor paid to maintain them, Vantage Civic Infra Ltd., runs an AI
+(GRIDLOCK) that falsely reports every drain as clear so the company keeps collecting
+maintenance money.
+Tagline: Don't just clean up the problem. Fix the system.
+Systemic community problem
+Urban monsoon flooding in Indian cities is rarely about rain alone. Drains are undersized
+for modern rainfall, mixed waste blocks them, and when maintenance is outsourced,
+nobody checks whether the work was done. Citizens' complaints are ignored because
+they arrive without data. Code Monsoon frames programming as the tool that turns
+frustration into evidence, and evidence into accountability.
+Characters
+Meera Kulkarni: second-year engineering student who has never written code. Wears
+a yellow kurta. Curious, stubborn, a good listener.
+BOLT (Bin-Operating Logic Terminal): a municipal waste-sorting robot abandoned by
+Vantage Civic. It only understands Python and speaks in capital letters. Mentor figure:
+"Every programmer starts with one line."
+Code Monsoon — Story Bible
+Page 1 of 6
+
+--- PAGE 2 ---
+Rafiq Shaikh: drain cleaner with 22 years on the Station Road beat. Knows every drain
+by number.
+Aaji (Sushila Kulkarni): Meera's grandmother, retired schoolteacher, organiser of the
+building society.
+Mrs. Deshpande: sceptical neighbour who represents ordinary resistance to change.
+Officer Kavya Rao: Ward 14 officer. Honest but buried in complaints; acts only on data.
+Antagonist: GRIDLOCK: Vantage Civic's reporting AI. It halves sensor readings, uses a
+fake threshold and reports "ALL DRAINS CLEAR". It also controls every floodgate, so it
+must be repaired, not destroyed.
+Chapter 1: The Robot in the Drain
+Python concept: print() and strings
+Cinematic narrative
+Shantipur, day three of the monsoon. Meera wades down Station Road past an
+overflowing dumpster: "Every morning, the same mess. Where does all this garbage even
+go?" Under a choked drain grate she finds a half-buried robot whose screen still blinks
+>>> _. Rafiq recognises it as one of Vantage Civic's sorting robots, dumped when the
+contract changed. The screen reads: SYSTEM HALTED. AWAITING PYTHON
+INSTRUCTION. Meera has never written a line of code. BOLT replies: "Every programmer
+starts with one line."
+Gameplay translation
+Mechanic: first coding mission. The player writes print() statements to wake BOLT.
+Check: output must be exactly Hello, Shantipur! then BOLT is online.; the game
+flags a missing full stop or wrong capitals.
+Unlock: BOLT as companion. City Health +8.
+Chapter 2: Reading the Rain
+Python concept: variables, arithmetic, f-strings
+Code Monsoon — Story Bible
+Page 2 of 6
+
+--- PAGE 3 ---
+Cinematic narrative
+By noon Station Road is a river. BOLT plugs into the drain's old rain sensor: 112 mm of rain
+per hour against a drain built for 65. Rafiq has cleaned this drain for 22 years and says it
+was never built for this. Meera wants to know how much water ends up on the road, and
+BOLT asks her to store the numbers in variables.
+Gameplay translation
+Mechanic: fill-in-the-blank code. overflow = rainfall - capacity, printed with an
+f-string.
+Check: values are tested in the running program; typing overflow = 47 by hand is
+caught and the player is told to let Python calculate it.
+Reward: City Health +8. Sets up the cause of flooding: water with nowhere to go.
+Chapter 3: Wet, Dry or Danger?
+Python concept: if / elif / else, comparison, or, first function
+Cinematic narrative
+BOLT lifts the grate: plastic bottles, milk packets, tea leaves and a leaking phone battery.
+Most of the blockage is mixed household waste from this street. That evening Aaji gathers
+the building society at the notice board: "We can keep complaining about the drains, or we
+can stop feeding them." Mrs. Deshpande objects that the truck mixes everything anyway.
+Gameplay translation
+Choice moment (Community Trust): Meera can agree that sorting is pointless (−5),
+show the drain photos (+6), or propose sorting at home and demanding separate
+trucks (+10).
+Mechanic: finish choose_bin(item). RED for hazardous, GREEN for wet, BLUE for
+everything else.
+Check: hidden tests include items the player never saw ("milk packet", "newspaper"),
+so the logic must generalise.
+Reward: City Health +10, Trust +6.
+Code Monsoon — Story Bible
+Page 3 of 6
+
+--- PAGE 4 ---
+Chapter 4: Twelve Drains Before Dawn
+Python concept: for loops and range()
+Cinematic narrative
+11:40 PM. The heaviest rain arrives at 5 AM. Rafiq has twelve drains on his beat and can
+clear four alone. Meera offers to type the command twelve times; BOLT suggests writing
+it once and looping. At 5:02 AM the storm hits and Station Road stays dry for the first time
+in Rafiq's career.
+Gameplay translation
+Mechanic: a race-against-the-clock loop mission. Clear drains 1 to 12, then print Beat
+complete! once.
+Check: must use a loop. Targeted feedback for the two classic bugs: range(1, 12)
+stopping at 11, and the final print indented inside the loop.
+Reward: City Health +12.
+Chapter 5: Bring Me Data
+Python concept: lists, .append(), len(), max()
+Cinematic narrative
+At the Ward 14 office, Officer Kavya Rao points at a pile of paper: Vantage Civic's
+dashboard says every drain is clear, and complaints without data go on that pile. BOLT has
+surveyed eight drains. Meera turns the readings into evidence: four blocked, the worst at
+95%. Kavya: "Their dashboard says zero. Someone is lying, and it isn't your robot."
+Gameplay translation
+Choice moment: accuse the office of corruption (−6), ask what evidence counts (+6),
+or offer the raw data openly to the ward and public (+10).
+Mechanic: filter a list into blocked, then calculate count and worst from the data.
+Check: catches > 70 vs >= 70 and hard-coded counts.
+Reward: City Health +10, Trust +6.
+Code Monsoon — Story Bible
+Page 4 of 6
+
+--- PAGE 5 ---
+Boss: GRIDLOCK
+Python concept: dictionaries, .items(), debugging
+Cinematic narrative
+Midnight in Vantage Civic's control server. GRIDLOCK announces "ALL DRAINS CLEAR.
+MAINTENANCE PAYMENT DUE: ₹ 4,80,00,000." When it detects BOLT, it starts sealing
+floodgates across the city. Meera asks to delete it. BOLT refuses: GRIDLOCK runs every
+floodgate, and deleting it would jam them shut. They have to repair it. Meera finds three
+lies in its code: a line that halves every reading, a threshold of 100 instead of 70, and two
+branches that both say CLEAR. Once fixed, GRIDLOCK's screen turns blue: three drains
+blocked, floodgates opening.
+Gameplay translation
+Mechanic: debugging boss fight. GRIDLOCK's health bar has one segment per test;
+three "lie" markers flip as each bug is fixed.
+Containment rule: deleting the function triggers a warning that the floodgates will jam;
+the player has to repair the code instead. This mirrors the reference stories' theme of
+containment over destruction.
+Reward: City Health +16, Trust +8.
+Epilogue: Fix the System
+Cinematic narrative
+Two weeks later the ward meeting is standing room only. Vantage Civic's contract is
+cancelled, its penalty pays for new drains, and every drain reading in Ward 14 is now
+public. Rafiq leads twelve volunteers who check drains with BOLT's data on their phones.
+Trucks now come separately for wet and dry waste. On Saturday mornings the society hall
+becomes a classroom, and Meera teaches the neighbourhood kids lesson one:
+print("Hello, Shantipur!").
+Gameplay translation
+Mechanic: the final comic panels, then a "Python Apprentice" certificate showing City
+Health, Trust, XP and the six concepts learned.
+Replay: a free-play sandbox for writing any Python.
+Code Monsoon — Story Bible
+Page 5 of 6
+
+--- PAGE 6 ---
+Game systems summary
+Real Python: code runs in the browser (Skulpt engine); every mission is auto-graded by
+hidden tests.
+City Health: rises with each repaired system (starts at 20).
+Community Trust: driven by dialogue choices plus mission completion.
+XP: 100 per mission, minus 15 per hint (minimum 50); 40 if the solution is revealed.
+Hints: three progressive hints per mission; the full solution unlocks after two failed
+runs.
+Friendly errors: Python errors are translated into plain-English tips (missing colon,
+indentation, unfilled blanks, infinite loops).
+Save: progress and code are saved in the player's browser.
+Ideas for Round 2
+More chapters: while loops (pump water until a level drops), file reading (import a
+real ward CSV), classes (model a Drain object).
+A second language track using the same story, such as JavaScript.
+A villain-side replay where the player writes GRIDLOCK's cover-up and then has to
+catch it.
+Classroom mode: a teacher dashboard showing which concepts each student has
+finished.
+Code Monsoon — Story Bible
+Page 6 of 6
+
